@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="AddJsCssReference"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="38afa8d7-b498-4529-9f99-6279392f9309"
+        Properties="{&quot;testMessage&quot;:&quot;&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

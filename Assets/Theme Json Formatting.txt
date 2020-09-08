@@ -1,0 +1,57 @@
+@{
+"themePrimary" = "#ff0061";
+"themeLighterAlt" = "#fff5f9";
+"themeLighter" = "#ffd6e6";
+"themeLight" = "#ffb3d0";
+"themeTertiary" = "#ff66a1";
+"themeSecondary" = "#d40457";
+"themeDarkAlt" = "#e60058";
+"themeDark" = "#c2004a";
+"themeDarker" = "#8f0037";
+"neutralLighterAlt" = "#1c264d";
+"neutralLighter" = "#1c264c";
+"neutralLight" = "#1b2449";
+"neutralQuaternaryAlt" = "#192244";
+"neutralQuaternary" = "#182041";
+"neutralTertiaryAlt" = "#171f3e";
+"neutralTertiary" = "#c8c8c8";
+"neutralSecondary" = "#d0d0d0";
+"neutralPrimaryAlt" = "#dadada";
+"neutralPrimary" = "#ffffff";
+"neutralDark" = "#f4f4f4";
+"black" = "#f8f8f8";
+"white" = "#1e2850";
+}
+
+second theme:
+
+@{
+"themePrimary" = "#ffffff";
+"themeLighterAlt" = "#d992af";
+"themeLighter" = "#ff0061";
+"themeLight" = "#4d001d";
+"themeTertiary" = "#99003b";
+"themeSecondary" = "#e00056";
+"themeDarkAlt" = "#ff0061";
+"themeDark" = "#290010";
+"themeDarker" = "#000000";
+"neutralLighterAlt" = "#222d57";
+"neutralLighter" = "#27325d";
+"neutralLight" = "#303c69";
+"neutralQuaternaryAlt" = "#36426f";
+"neutralQuaternary" = "#3b4775";
+"neutralTertiaryAlt" = "#535e8c";
+"neutralTertiary" = "#c8c8c8";
+"neutralSecondary" = "#c8c8c8";
+"neutralPrimaryAlt" = "#ff0061";
+"neutralPrimary" = "#ffffff";
+"neutralDark" = "#ff0061";
+"black" = "#ff0061";
+"white" = "#1e2850";
+"primaryBackground" = "#1e2850";
+"primaryText" = "#ffffff";
+"bodyBackground" = "#1e2850";
+"bodyText" = "#ffffff";
+"disabledBackground" = "#1c264c";
+"disabledText" = "#708090";
+}
