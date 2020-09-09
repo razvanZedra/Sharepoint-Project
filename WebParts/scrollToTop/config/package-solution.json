@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ZNet_ScrollToTop",
+    "id": "e9309cc7-f82b-44f5-baad-9ad60cfa71e3",
+    "version": "1.0.10.1",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "features": [
+      {
+        "title": "ZNet_ScrollToTop",
+        "description": "Installs a scroll to top element on each page of the site collection",
+        "id": "24d340f4-a282-42f3-88e0-dd4b6de6e96a",
+        "version": "1.0.0.1",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ZNet_ScrollToTop.sppkg"
+  }
+}

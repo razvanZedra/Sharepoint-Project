@@ -1,0 +1,40 @@
+[
+    {
+        "selector": "[class^=scrollRegion_]",
+        "forceOverflow": false,
+        "isMobile": false,
+        "comment": "This is the css class for default pages in desktop mode"
+    },
+    {
+        "selector": "[class^=pageLayout_]",
+        "forceOverflow": true,
+        "isMobile": true,
+        "comment": "This is the css class for default pages in responsive mode"
+    },
+    {
+        "selector": ".sp-SiteHub-content",
+        "forceOverflow": false,
+        "isMobile": false,
+        "comment": "This is the css class for Site Content view in desktop and responsive mode"
+    },
+    {
+        "selector": ".ms-ScrollablePane--contentContainer",
+        "forceOverflow": false,
+        "isMobile": false,
+        "comment": "This is the css class for Lists/libraries items views in desktop mode"
+    },
+    {
+      "selector": ".CanvasZoneContainer",
+      "forceOverflow": false,
+      "isMobile": false,
+      "comment": "This is the css class for Lists/libraries items views in responsive mode"
+    },
+    {
+        "selector": ".od-scrollablePane-content-ItemsScopeList",
+        "forceOverflow": false,
+        "isMobile": true,
+        "comment": "This is the css class for Lists/libraries items views in responsive mode"
+    }
+
+
+]
