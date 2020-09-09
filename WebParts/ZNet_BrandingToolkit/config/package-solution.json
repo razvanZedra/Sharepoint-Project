@@ -3,7 +3,7 @@
   "solution": {
     "name": "ZNet_Css_JS_Reference",
     "id": "d9c30e1a-bf06-46fa-807d-ce5182d9c91c",
-    "version": "1.0.0.3",
+    "version": "1.0.0.4",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
@@ -22,6 +22,6 @@
     ]
   },
   "paths": {
-    "zippedPackage": "solution/ZNet_BrandingToolkit"
+    "zippedPackage": "solution/ZNet_BrandingToolkit.sppkg"
   }
 }
