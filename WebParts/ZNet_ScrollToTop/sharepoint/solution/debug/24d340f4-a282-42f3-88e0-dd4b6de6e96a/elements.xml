@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="ScrollToTop"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="ba2540fe-8c92-4b95-99fb-04b074c82b13"
+        ClientSideComponentProperties="{&quot;scrollDuration&quot;:null,&quot;buttonIcon&quot;:&quot;&quot;,&quot;shape&quot;:&quot;&quot;}">
+    </CustomAction>
+</Elements>

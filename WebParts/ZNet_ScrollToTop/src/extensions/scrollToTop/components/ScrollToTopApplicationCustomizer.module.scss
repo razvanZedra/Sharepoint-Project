@@ -1,0 +1,42 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.spfxScrolltotopBtn {
+    background-color: #1e2850;
+    width: 60px;
+    min-width: inherit;
+    position: fixed;
+    height: 45px;
+    display: block;
+    right: 40px;
+    bottom: 50px;
+    border: 0;
+    color: #49b4b2!important;
+    font-weight: 900;
+    font-size: 30px;
+
+}
+
+.spfxScrolltotopBtn:hover {
+    cursor: pointer;
+    background-color: "[theme: themeDarkAlt]";
+}
+
+.spfxScrolltotopBtn:focus {
+    outline: none;
+}
+
+.spfxScrolltotopBtn.circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    bottom: 35px;
+    box-shadow: 0 2px 4px rgba(135, 135, 135,.5), 0 0 0 transparent;
+    -o-box-shadow: 0 2px 4px rgba(135, 135, 135,.5),0 0 0 transparent;
+}
+.scrollUpIcon{
+    font-weight: 900;
+    font-size: 20px;
+}

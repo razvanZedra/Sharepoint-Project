@@ -1,0 +1,1 @@
+{"version":3,"file":"IScrollToTopButtonApplicationCustomizerProps.d.ts","sourceRoot":"","sources":["../../../../src/extensions/scrollToTop/components/IScrollToTopButtonApplicationCustomizerProps.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,kBAAkB;IAC/B,IAAI,EAAE,MAAM,CAAC;IACb,KAAK,EAAE,MAAM,CAAC;IACd,IAAI,EAAE,MAAM,CAAC;IACb,YAAY,EAAE,MAAM,GAAG,CAAC;CAC3B"}
