@@ -3,7 +3,7 @@
   "solution": {
     "name": "ZNet_ScrollToTop",
     "id": "e9309cc7-f82b-44f5-baad-9ad60cfa71e3",
-    "version": "1.1.0.9",
+    "version": "1.1.1.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

@@ -82,7 +82,7 @@ export default class ScrollToTopApplicationCustomizer extends BaseApplicationCus
 
     /* If the duration property is empty, the default will be 1 second */
     if (!this.properties.scrollDuration || isNaN(this.properties.scrollDuration)) {
-      this.properties.scrollDuration = 1000;
+      this.properties.scrollDuration = 400;
     }
 
     /* If no UI Fabric icon class was specified, the value by default will be 'ChevronUpSmall' */
