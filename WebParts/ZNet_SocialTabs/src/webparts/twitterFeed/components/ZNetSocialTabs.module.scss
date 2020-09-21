@@ -1,6 +1,14 @@
 @import '~office-ui-fabric-react/dist/sass/References.scss';
 
 .twitterFeed {
+  // .instagramIcon{
+
+  //   // font-size:30px;
+  //   // background: #d6249f;
+  //   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)!important;
+  //   // -webkit-background-clip: text;
+  //   // -webkit-text-fill-color: transparent;
+  // }
   .container {
     max-width: 700px;
     margin: 0px auto;
@@ -40,6 +48,44 @@
     font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 600;
+  }
+  .twitterIcon{
+    font-size: large;
+
+  }
+  .pivotControl {
+    margin-top: -4px;
+    ul[role="tablist"] span {
+      // border: 1px solid #7f7f7f;
+      // border-radius: 12px;
+      font-size: 20px;
+      font-weight: 600;
+  }
+    button {
+      padding-top: 10px!important;
+      height: 60px!important;
+      cursor: pointer;
+      text-align: center;
+      // border-radius: 10px;
+      background-clip: padding-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 1px solid transparent!important;
+      font-size: 13px;
+      margin-right: 0px;
+      &:hover {
+          background-color: lightgrey;
+          border-color: lightgrey;
+      }
+      &[aria-selected="true"] {
+        background-color: #ff0061!important;
+        border-color: #ff0061;
+        color: #fff;
+        fill: #fff;
+      }&[aria-selected="true"]::before {
+        border: none!important;
+      }
+    }
   }
   .button {
     // Our button

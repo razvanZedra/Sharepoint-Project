@@ -33,9 +33,8 @@ export default class ZNetSocialTabsWebPart extends BaseClientSideWebPart<IZNetSo
   }
 
   public render(): void {
-    const element: React.ReactElement<IZNetSocialTabsProps | IPlaceholderProps> = this.isConfigured() ? React.createElement(
+    const element: React.ReactElement<IZNetSocialTabsProps > =  React.createElement(
       ZNetSocialTabsFeed,
-
       {
         title: this.properties.title,
         displayMode: this.displayMode,
@@ -43,90 +42,15 @@ export default class ZNetSocialTabsWebPart extends BaseClientSideWebPart<IZNetSo
           this.properties.title = value;
         },
         sourceType: this.properties.sourceType,
-        /**
-         * Twitter public profile name to be used with 'profile' or 'likes' timeline
-         */
         screenName: this.properties.screenName,
-        /**
-         * Twitter public profile user id to be used with 'profile' or 'likes' timeline
-         */
-        // userId: this.properties.userId,
-        /**
-         * List's owner name for 'list' timeline
-        //  */
-        // ownerScreenName: this.properties.ownerScreenName,
-        // /**
-        //  * List's name. For 'list' timeline
-        //  */
-        // slug: this.properties.slug,
-        // /**
-        //  * Unique list id for 'list' timeline OR
-        //  * Unique collection id for 'collection' timeline
-        //  */
-        // id:  this.properties.id,
-        // /**
-        //  * Url source to show
-        //  */
-        // url:  this.properties.url,
-        /**
-         * Calculate widget's heigh based on parent
-         */
-        // autoHeight: this.properties.autoHeight,
-        /**
-         * Widget's theme
-        //  */
-        // theme: this.properties.theme,
-        // /**
-        //  * Border color (hex)
-        //  */
-        // borderColor: this.properties.borderColor,
-        // /**
-        //  * Do not display header
-        //  */
-        // noHeader: this.properties.noBorders,
-        // /**
-        //  * Do not display footer
-        //  */
-        // noFooter: this.properties.noFooter,
-        // /**
-        //  * Do not display border
-        //  */
-        // noBorders: this.properties.noBorders,
-        // /**
-        //  * Do not display scrollbar
-        //  */
-        // noScrollbar: this.properties.noScrollbar,
-        // /**
-        //  * Custom language code to use.
-        //  * See https://developer.twitter.com/en/docs/twitter-for-websites/twitter-for-websites-supported-languages/overview.html
-        //  */
-        // lang: this.properties.lang,
-        /**
-         * Custom width
-         */
+
         width:  this.properties.width,
-        /**
-         * Custom height (for autoHeight set to false)
-         */
+
         height:  this.properties.height,
-        /**
-         * Number of tweets to display. 1..20
-         */
+
         tweetLimit:  this.properties.tweetLimit
       }
       // this.properties
-    ) : React.createElement(
-      Placeholder,
-      {
-        iconName: 'Edit',
-        iconText: strings.Configure,
-        description: strings.ConfigureDescription,
-        buttonLabel: strings.ConfigureButton,
-        hideButton: this.displayMode === DisplayMode.Read,
-        onConfigure: () => {
-          this.context.propertyPane.open();
-        }
-      }
     );
 
     ReactDom.unmountComponentAtNode(this.domElement);
@@ -364,34 +288,34 @@ export default class ZNetSocialTabsWebPart extends BaseClientSideWebPart<IZNetSo
     };
   }
 
-  private isConfigured(): boolean {
-    const {
-      sourceType,
-      screenName,
-      // ownerScreenName,
-      // slug,
-      // id,
-      // url
-    } = this.properties;
+  // private isConfigured(): boolean {
+  //   const {
+  //     sourceType,
+  //     screenName,
+  //     // ownerScreenName,
+  //     // slug,
+  //     // id,
+  //     // url
+  //   } = this.properties;
 
-    if (!sourceType) {
-      return false;
-    }
+  //   if (!sourceType) {
+  //     return false;
+  //   }
 
-    switch (sourceType) {
-      case 'profile':
-      // case 'likes':
-        return !!screenName;
-        break;
-      // case 'list':
-      //   return !!ownerScreenName && !!slug;
-      //   break;
-      // case 'collection':
-      //   return !!id;
-      //   break;
-      // case 'url':
-      //   return !!url;
-      //   break;
-    }
-  }
+  //   switch (sourceType) {
+  //     case 'profile':
+  //     // case 'likes':
+  //       return !!screenName;
+  //       break;
+  //     // case 'list':
+  //     //   return !!ownerScreenName && !!slug;
+  //     //   break;
+  //     // case 'collection':
+  //     //   return !!id;
+  //     //   break;
+  //     // case 'url':
+  //     //   return !!url;
+  //     //   break;
+  //   }
+  // }
 }

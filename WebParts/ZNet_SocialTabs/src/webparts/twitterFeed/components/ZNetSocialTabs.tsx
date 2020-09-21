@@ -5,33 +5,26 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { WebPartTitle } from "@pnp/spfx-controls-react/lib/WebPartTitle";
 import { registerIcons } from '@uifabric/styling';
 import { Label } from 'office-ui-fabric-react/lib/Label';
-// import { Icon } from 'office-ui-fabric-react/lib/Icon';
-import { Pivot, PivotItem, PivotLinkFormat } from 'office-ui-fabric-react/lib/Pivot';
-import { IStyleSet } from 'office-ui-fabric-react/lib/Styling';
-// registerIcons({
-//   icons: {
-//     'Home': <Icon icon={['fal', 'home']} />,
-//     'HomeSolid': <Icon icon={['fas', 'home']} />,
-//   }
-// });
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize } from 'office-ui-fabric-react/lib/Pivot';
+
+
+
+registerIcons({
+  icons: {
+    'TwitterIcon': <FontAwesomeIcon size="1x" icon={faTwitter}  />,
+    'InstagramIcon': <FontAwesomeIcon size="1x"  icon={faInstagram} />,
+    'LinkedinIcon': <FontAwesomeIcon  size="1x" icon={faLinkedin}  />
+  }
+});
 export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {}> {
   public render(): React.ReactElement<IZNetSocialTabsProps> {
     const {
       sourceType,
       screenName,
-      // userId,
-      // ownerScreenName,
-      // slug,
-      // id,
-      // url,
-      // autoHeight,
-      // theme,
-      // borderColor,
-      // noHeader,
-      // noFooter,
-      // noBorders,
-      // noScrollbar,
-      // lang,
       width,
       height,
       tweetLimit,
@@ -45,44 +38,27 @@ export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {
         <WebPartTitle displayMode={displayMode}
           title={title} className={styles.zNetWpTitle}
           updateProperty={updateProperty} />
-        <Pivot aria-label="ZNet Social Tabs" linkFormat={PivotLinkFormat.tabs}>
-          <PivotItem itemIcon="Emoji2" headerText="Twitter">
+        <Pivot className={styles.pivotControl} aria-label="ZNet Social Tabs" linkFormat={PivotLinkFormat.tabs}  linkSize={PivotLinkSize.large} >
+          <PivotItem itemIcon="TwitterIcon" headerText="Twitter">
             <TwitterTimelineEmbed
               sourceType={sourceType}
               screenName={screenName}
-              // userId={userId}
-              // ownerScreenName={ownerScreenName}
-              // slug={slug}
-              // id={id}
-              // url={url}
-              //  autoHeight={autoHeight}
-              // theme={theme}
-              // borderColor={borderColor}
               noHeader={true}
               noFooter={true}
               noBorders={true}
               noScrollbar={true}
               lang={'en'}
-              // noHeader={noHeader}
-              // noFooter={noFooter}
-              // noBorders={noBorders}
-              // noScrollbar={noScrollbar}
-              // lang={lang || 'en'}
               options={{
-                // height: autoHeight ? undefined : height,
                 height: height,
                 width: width,
                 tweetLimit: tweetLimit
               }} />
           </PivotItem>
-          <PivotItem headerText="Bar">
+          <PivotItem  itemIcon="InstagramIcon" headerText="Instagram">
             <Label>Pivot #2</Label>
           </PivotItem>
-          <PivotItem headerText="Bas">
+          <PivotItem itemIcon="LinkedinIcon" headerText="LinkedIn">
             <Label>Pivot #3</Label>
-          </PivotItem>
-          <PivotItem headerText="Biz">
-            <Label>Pivot #4</Label>
           </PivotItem>
         </Pivot>
 
