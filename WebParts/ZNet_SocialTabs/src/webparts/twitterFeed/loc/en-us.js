@@ -1,6 +1,6 @@
 define([], function () {
   return {
-    "PropertyPaneDescription": "Twitter Timeline Setting",
+    "PropertyPaneDescription": "ZNetSocial Feed Setting",
     "SourceGroupName": "Source",
     "SourceType": "Source type",
     "SourceTypeProfile": "Profile",

@@ -36,7 +36,11 @@
     @include ms-font-l;
     @include ms-fontColor-white;
   }
-
+  .zNetWpTitle span{
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+  }
   .button {
     // Our button
     text-decoration: none;
