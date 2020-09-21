@@ -172,6 +172,7 @@ export default class ScrollToTopApplicationCustomizer extends BaseApplicationCus
    */
   private _renderPlaceHolders(): void {
     if (!this._bottomPlaceholder) {
+      let myOfficeLink =
       this._bottomPlaceholder = this.context.placeholderProvider.tryCreateContent(
         PlaceholderName.Bottom,
         { onDispose: this._onDispose }

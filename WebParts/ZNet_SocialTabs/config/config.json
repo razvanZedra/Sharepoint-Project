@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "twitter-feed-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/twitterFeed/ZNetSocialTabsWebPart.js",
+          "manifest": "./src/webparts/twitterFeed/ZNetSocialTabsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ZNetSocialTabsWebPartStrings": "lib/webparts/twitterFeed/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}

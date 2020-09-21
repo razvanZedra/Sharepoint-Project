@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest" Name="ZNet_RssReader" ProductID="fcb53167-e0d5-4ed1-9648-149146649aa1" Version="1.0.0.6" SharePointMinVersion="16.0.0.0" IsClientSideSolution="true" SkipFeatureDeployment="true" IsDomainIsolated="false"><Properties><Title>ZNet_RssReader</Title></Properties></App>
