@@ -15,9 +15,9 @@ import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize } from 'office-ui-fabr
 
 registerIcons({
   icons: {
-    'TwitterIcon': <FontAwesomeIcon size="1x" icon={faTwitter}  />,
-    'InstagramIcon': <FontAwesomeIcon size="1x"  icon={faInstagram} />,
-    'LinkedinIcon': <FontAwesomeIcon  size="1x" icon={faLinkedin}  />
+    'TwitterIcon': <FontAwesomeIcon size="2x" icon={faTwitter}  />,
+    'InstagramIcon': <FontAwesomeIcon size="2x"  icon={faInstagram} />,
+    'LinkedinIcon': <FontAwesomeIcon  size="2x" icon={faLinkedin}  />
   }
 });
 export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {}> {
@@ -39,6 +39,10 @@ export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {
           title={title} className={styles.zNetWpTitle}
           updateProperty={updateProperty} />
         <Pivot className={styles.pivotControl} aria-label="ZNet Social Tabs" linkFormat={PivotLinkFormat.tabs}  linkSize={PivotLinkSize.large} >
+
+          <PivotItem itemIcon="LinkedinIcon" headerText="LinkedIn">
+            <Label>Please provide API Access Token!!!</Label>
+          </PivotItem>
           <PivotItem itemIcon="TwitterIcon" headerText="Twitter">
             <TwitterTimelineEmbed
               sourceType={sourceType}
@@ -55,10 +59,7 @@ export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {
               }} />
           </PivotItem>
           <PivotItem  itemIcon="InstagramIcon" headerText="Instagram">
-            <Label>Pivot #2</Label>
-          </PivotItem>
-          <PivotItem itemIcon="LinkedinIcon" headerText="LinkedIn">
-            <Label>Pivot #3</Label>
+            <Label>!~Please provide API Access Code and Secret~!</Label>
           </PivotItem>
         </Pivot>
 

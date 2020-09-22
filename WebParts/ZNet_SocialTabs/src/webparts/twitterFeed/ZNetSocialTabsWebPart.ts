@@ -27,7 +27,7 @@ export default class ZNetSocialTabsWebPart extends BaseClientSideWebPart<IZNetSo
       this.properties.sourceType = 'profile';
     }
     if (!this.properties.title) {
-      this.properties.title = 'profile';
+      this.properties.title = 'ZNet Social Corner';
     }
     return super.onInit();
   }
