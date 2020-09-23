@@ -1,0 +1,95 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.groupPeople {
+  .container {
+    @include ms-Grid;
+    padding: 0;
+  }
+
+  .row {
+    @include ms-Grid-row;
+  }
+
+  .column {
+    @include ms-Grid-col;
+    @include ms-lg12;
+    @include ms-xl12;
+  }
+
+  /**
+   * User same style than native webpart title
+   */
+  .title {
+    font-family: "Segoe UI Web (West European)","Segoe UI","-apple-system,BlinkMacSystemFont",Roboto,"Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 24px;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  // .ms-Persona-imageArea{
+  //   margin: auto;
+    
+  // }
+  // .ms-Persona-image {
+  //   border-radius: 0px!important;  
+  // }
+  /*
+   * Used to hide title
+   */
+  .hidden {
+    display: none;
+  }
+  
+  .personaTile {
+    @include ms-Grid-col;
+    @include ms-lg4;
+    @include ms-md4;
+    @include ms-sm12;
+    // margin: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+    transition: box-shadow 0.5s ease 0s;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding-left: 0;
+    max-width: 172px;
+    padding-right: 0;
+  }
+  .personaTile:hover{
+
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 3.2px 7.2px 0px, rgba(0, 0, 0, 0.11) 0px 0.6px 1.8px 0px;
+  }
+  .persona {
+    width: auto;
+    height: 230px!important;
+    display: block;
+    // padding-left: 10px;
+    // padding-right: 10px;
+   
+  }
+  .persona > div >div >div{
+    border-radius:  0;
+  }
+  .persona > div >div {
+    text-align: center;
+    // background-color: red;
+    margin: 0 auto;
+  }
+  .persona > div {
+    display: block;
+    height: auto;
+    padding: 0!important;
+    // padding-right: 8px;
+    // display: table-cell;
+    // vertical-align: middle;
+  }
+  // .persona > div > .ms-Persona-details{
+  //   padding: 0;
+  // }
+  .persona > div .ms-Persona-secondaryText > div {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
