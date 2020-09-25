@@ -21,7 +21,7 @@
         "default": "Other"
       },
       "title": {
-        "default": "SharePoint Group People"
+        "default": "ZNet PeopleCarousel"
       },
       "description": {
         "default": "Display users (only) from a SharePoint group"

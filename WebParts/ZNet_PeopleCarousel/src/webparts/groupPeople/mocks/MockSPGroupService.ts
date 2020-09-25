@@ -236,6 +236,54 @@ export default class SPGroupService implements ISPGroupService {
                                 "odata.type": "SP.User"
                             },
                             {
+                                Email: "user2@contoso.onmicrosoft.com",
+                                Expiration: "",
+                                Id: 11,
+                                IsEmailAuthenticationGuestUser: false,
+                                IsHiddenInUI: false,
+                                IsShareByEmailGuestUser: false,
+                                IsSiteAdmin: false,
+                                LoginName: "i:0#.f|membership|user2@contoso.onmicrosoft.com",
+                                PrincipalType: 1,
+                                Title: "User 02",
+                                UserPrincipalName: "user2@contoso.onmicrosoft.com",
+                                "odata.editLink": "Web/GetUserById(11)",
+                                "odata.id": "https://contoso.sharepoint.com/sites/project/_api/Web/GetUserById(13)",
+                                "odata.type": "SP.User"
+                            },
+                            {
+                                Email: "user2@contoso.onmicrosoft.com",
+                                Expiration: "",
+                                Id: 11,
+                                IsEmailAuthenticationGuestUser: false,
+                                IsHiddenInUI: false,
+                                IsShareByEmailGuestUser: false,
+                                IsSiteAdmin: false,
+                                LoginName: "i:0#.f|membership|user2@contoso.onmicrosoft.com",
+                                PrincipalType: 1,
+                                Title: "User 02",
+                                UserPrincipalName: "user2@contoso.onmicrosoft.com",
+                                "odata.editLink": "Web/GetUserById(11)",
+                                "odata.id": "https://contoso.sharepoint.com/sites/project/_api/Web/GetUserById(19)",
+                                "odata.type": "SP.User"
+                            },
+                            {
+                                Email: "user2@contoso.onmicrosoft.com",
+                                Expiration: "",
+                                Id: 11,
+                                IsEmailAuthenticationGuestUser: false,
+                                IsHiddenInUI: false,
+                                IsShareByEmailGuestUser: false,
+                                IsSiteAdmin: false,
+                                LoginName: "i:0#.f|membership|user2@contoso.onmicrosoft.com",
+                                PrincipalType: 1,
+                                Title: "User 02",
+                                UserPrincipalName: "user2@contoso.onmicrosoft.com",
+                                "odata.editLink": "Web/GetUserById(11)",
+                                "odata.id": "https://contoso.sharepoint.com/sites/project/_api/Web/GetUserById(12)",
+                                "odata.type": "SP.User"
+                            },
+                            {
                                 Email: "",
                                 Expiration: "",
                                 Id: 12,
@@ -248,7 +296,7 @@ export default class SPGroupService implements ISPGroupService {
                                 Title: "Security Group Only",
                                 UserPrincipalName: null,
                                 "odata.editLink": "Web/GetUserById(12)",
-                                "odata.id": "https://contoso.sharepoint.com/sites/project/_api/Web/GetUserById(12)",
+                                "odata.id": "https://contoso.sharepoint.com/sites/project/_api/Web/GetUserById(14)",
                                 "odata.type": "SP.User"
                             },
                             {
@@ -264,7 +312,7 @@ export default class SPGroupService implements ISPGroupService {
                                 Title: "User 03",
                                 UserPrincipalName: "user3@contoso.onmicrosoft.com",
                                 "odata.editLink": "Web/GetUserById(13)",
-                                "odata.id": "https://contoso.sharepoint.com/sites/project/_api/Web/GetUserById(13)",
+                                "odata.id": "https://contoso.sharepoint.com/sites/project/_api/Web/GetUserById(16)",
                                 "odata.type": "SP.User"
                             },
                             {

@@ -20,9 +20,12 @@
     "@microsoft/sp-property-pane": "1.11.0",
     "@microsoft/sp-webpart-base": "1.11.0",
     "@pnp/spfx-controls-react": "^1.19.0",
+    "@rehooks/component-size": "^1.0.3",
     "office-ui-fabric-react": "6.214.0",
     "react": "16.8.5",
-    "react-dom": "16.8.5"
+    "react-dom": "16.8.5",
+    "react-slick": "^0.27.11",
+    "slick-carousel": "^1.8.1"
   },
   "resolutions": {
     "@types/react": "16.8.8"
@@ -42,6 +45,7 @@
     "@types/mocha": "^5.2.6",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.3",
+    "@types/react-slick": "^0.23.4",
     "@types/sinon": "^9.0.4",
     "@types/webpack-env": "1.13.1",
     "ajv": "^6.10.0",

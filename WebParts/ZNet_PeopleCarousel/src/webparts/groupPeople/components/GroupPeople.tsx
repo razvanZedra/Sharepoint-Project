@@ -1,12 +1,13 @@
 import * as React from 'react';
 import styles from './GroupPeople.module.scss';
+import filmStripStyles from './../components/filmstripLayout/FilmstripLayout.module.scss';
 import { IGroupPeopleProps } from './IGroupPeopleProps';
 import {
   Log, Environment, EnvironmentType,
 } from '@microsoft/sp-core-library';
 import { Persona } from 'office-ui-fabric-react/lib/Persona';
 import PeopleCard from '../models/PeopleCard';
-
+import { FilmstripLayout } from './../components/filmstripLayout/FilmstripLayout';
 import * as strings from 'GroupPeopleWebPartStrings';
 
 /** Group People UI
@@ -30,7 +31,7 @@ export default class GroupPeople extends React.Component<IGroupPeopleProps, {}> 
    */
   constructor(props: IGroupPeopleProps) {
     super(props);
-    this._toggleTitle = props.displayTitle ? '' : styles.hidden;
+    this._toggleTitle = props.displayTitle ? '' : filmStripStyles.hidden;
   }
 
   /** Default render
@@ -38,32 +39,40 @@ export default class GroupPeople extends React.Component<IGroupPeopleProps, {}> 
    * @public
    */
   public render(): JSX.Element {
-    this._toggleTitle = this.props.displayTitle ? '' : styles.hidden;
+    this._toggleTitle = this.props.displayTitle ? '' : filmStripStyles.hidden;
     this._displayDefaultMessage = (this.props.users.length == 0 && !this.props.hide) ? '' : styles.hidden;
     return (
-      <div className={styles.groupPeople}>
-        <div className={styles.container}>
-          <div className={styles.row}>
-            <div className={styles.column}>
-              <h2 className={[styles.title, this._toggleTitle].join(' ')} role="heading">{this.props.title}</h2>
-              <div className={['grpPeopleNoItem', this._displayDefaultMessage].join(' ')}>{strings.NoItemFound}</div>
-              {this.props.users.map((p: PeopleCard) => {
-                return (<div className={styles.personaTile} key={p.key}>
-                  <Persona
-                  text={p.lineOne}
-                  secondaryText={p.lineTwo}
-                  tertiaryText={p.lineThree}
-                  imageUrl={p.image}
-                  size={170}
-                  className={styles.persona}
-                  coinSize={170}
-                />
-                </div>);
-              })}
-            </div>
-          </div>
-        </div>
+      <div className={filmStripStyles.filmStrip}>
+        <h2 className={[filmStripStyles.title, this._toggleTitle].join(' ')} role="heading">{this.props.title}</h2>
+        {this.props.users.length == 0 && !this.props.hide &&
+
+          <div className={['grpPeopleNoItem', this._displayDefaultMessage].join(' ')}>{strings.NoItemFound}</div>
+
+        }
+
+        <FilmstripLayout
+          ariaLabel={"Sample filmstrip layout web part, showing sample items., Use right and left arrow keys to navigate between cards in the film strip."}
+        >
+
+          {this.props.users.map((p: PeopleCard) => {
+            return (
+              // <div className={filmStripStyles.personaTile} key={p.key}>
+              <Persona
+                text={p.lineOne}
+                secondaryText={p.lineTwo}
+                tertiaryText={p.lineThree}
+                imageUrl={p.image}
+                size={170}
+                className={filmStripStyles.persona}
+                coinSize={170}
+              />
+              // </div>
+            );
+          })}
+
+        </FilmstripLayout>
       </div>
+
     );
   }
 }
