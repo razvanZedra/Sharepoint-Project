@@ -1,30 +1,44 @@
 ﻿#Config Variables
-$AdminSiteURL = "https://zedra365.sharepoint.com/"
-$ADPropertyName = "Department"
-$SPOPropertyName = "extensionAttribute2"
- 
-#Get Credentials to connect to Azure AD and SharePoint Online Admin Center
+$connectionName = "AzureRunAsConnection"
+$AdminSiteURL = Get-AutomationVariable -Name 'TenantUrl'
+$ADPropertyName = Get-AutomationVariable -Name 'ADPropertyName'
+$SPOPropertyName = Get-AutomationVariable -Name 'SPOPropertyName'
+$servicePrincipalConnection = Get-AutomationConnection -Name $connectionName
+$SPOAppId = Get-AutomationVariable -Name 'SharePointAppID'
+$SPOAppSecret = Get-AutomationVariable -Name 'SharePointAppSecret'
 
- 
+
 Try {
     #Connect to AzureAD
-    Connect-AzureAD 
+    Connect-AzureAD -TenantId $servicePrincipalConnection.TenantId -ApplicationId $servicePrincipalConnection.ApplicationId -CertificateThumbprint  $servicePrincipalConnection.CertificateThumbprint
  
-    #Get All Users of the Domain from AzureAD
+    #Connect-AzureAD -TenantId $servicePrincipalConnection.TenantId -ApplicationId $servicePrincipalConnection.ApplicationId -CertificateThumbprint  $servicePrincipalConnection.CertificateThumbprint
     $AllUsers = Get-AzureADUser -All:$True -Filter "UserType eq 'Member'"
-    Write-host "Total Number of User Profiles Found:"$AllUsers.Count 
- 
+
     #Connect to PnP Online
-    Connect-PnPOnline -Url $AdminSiteURL -Credentials $Cred
- 
+    Connect-PnPOnline -Url $AdminSiteURL -AppId $SPOAppId -AppSecret $SPOAppSecret
+    Write-Output Get-PnPContext
     #Iterate through All Users
     $Counter = 1
     ForEach($User in $AllUsers)
     {
-        Write-host "`nUpdating User Profile Property for: $($User.UserPrincipalName)" -f Yellow
- 
-        #Get the User Property value from Azure AD       
-        $ADUserPropertyValue = $User | Select -ExpandProperty $ADPropertyName
+
+        Write-host "`Updating User Profile Property for: $($User.UserPrincipalName)" -f Yellow
+        $extendedPropertyKey = $User.ExtensionProperty.Keys | Where-Object {$_ -match ($ADPropertyName+"*")} 
+
+
+        if($User.Surname -eq $null -or $User.Surname -eq "Service Account"){
+            continue
+        }
+        if($extendedPropertyKey -eq $null){
+          #$($User.UserPrincipalName +";") | Out-File -filePath C:\Logs\UsersWithNoExtendedProperty.txt -Append
+          Write-Output "`User does not have extended property synced from AD"
+            continue
+        }else{
+            $ADUserPropertyValue = $User.ExtensionProperty.$extendedPropertyKey
+        }
+
+        
  
         #Check if the AD Property is not Null
         If (!([string]::IsNullOrEmpty($ADUserPropertyValue)))
@@ -38,16 +52,16 @@ Try {
             If (([string]::IsNullOrEmpty($UserProfileProperty)))
             {
                 Set-PnPUserProfileProperty -Account $UserAccount -PropertyName $SPOPropertyName -Value $ADUserPropertyValue
-                Write-host "`tUpdated User Profile Property for: $($User.UserPrincipalName)" -f Green
+                Write-host "`Updated User Profile Property for: $($User.UserPrincipalName)" -f Green
             }
             Else
             {
-                Write-host "`t Existing Value of the Property in SharePoint is Not Null! Skipping..." -f Yellow
+                Write-host "`Existing Value of the Property in SharePoint is Not Null! Skipping..." -f Yellow
             }
         }
         else
         {
-            Write-host "`t AD Value of the Property is Null! Skipping..." -f Yellow
+            Write-host "`AD Value of the Property is Null! Skipping..." -f Yellow
         }
         $Counter++
         Write-Progress -Activity "Updating User Profile Data..." -Status "Updating User Profile $Counter of $($AllUsers.Count)" -PercentComplete (($Counter / $AllUsers.Count)  * 100)
@@ -58,4 +72,3 @@ Catch {
 }
 
 
-#Read more: https://www.sharepointdiary.com/2019/03/sharepoint-online-import-user-profile-property-from-azure-ad-using-powershell.html#ixzz6aqOQb6fl
