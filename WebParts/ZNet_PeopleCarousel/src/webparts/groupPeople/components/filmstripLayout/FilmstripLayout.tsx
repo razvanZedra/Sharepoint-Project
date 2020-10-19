@@ -36,7 +36,7 @@ export const FilmstripLayout = (props: { children: any; ariaLabel?: string; }) =
   var isInfinite: boolean = React.Children.count(props.children) > numSlides;
   var settings: any = {
     accessibility: true,
-    arrows: false,
+    arrows: true,
     autoplaySpeed: 5000,
     dots: false,
     variableWidth: true,
@@ -60,14 +60,18 @@ export const FilmstripLayout = (props: { children: any; ariaLabel?: string; }) =
     useCSS: true,
     rows: 1,
     respondTo: "slider",
+    afterChange: ()=>{
+
+      console.log("changed"); 
+    },
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true
+          infinite: false,
+          dots: false
         }
       },
       {
