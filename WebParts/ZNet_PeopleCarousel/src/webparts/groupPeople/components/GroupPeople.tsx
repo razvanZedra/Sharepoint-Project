@@ -62,9 +62,9 @@ export default class GroupPeople extends React.Component<IGroupPeopleProps, {}> 
                 secondaryText={p.lineTwo}
                 tertiaryText={p.lineThree}
                 imageUrl={p.image}
-                size={170}
+                size={140}
                 className={filmStripStyles.persona}
-                coinSize={170}
+                coinSize={140}
               />
               // </div>
             );
