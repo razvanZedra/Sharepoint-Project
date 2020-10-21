@@ -30,7 +30,7 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts", "src/webparts/twitterFeed/components/IZNetInstagram.tsx"
   ],
   "exclude": [
     "node_modules",
