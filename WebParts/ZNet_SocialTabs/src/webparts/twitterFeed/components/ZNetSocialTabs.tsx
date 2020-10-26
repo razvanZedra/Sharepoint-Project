@@ -4,15 +4,14 @@ import { IZNetSocialTabsProps } from './IZNetSocialTabsProps';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { WebPartTitle } from "@pnp/spfx-controls-react/lib/WebPartTitle";
 import { registerIcons } from '@uifabric/styling';
-import { Label } from 'office-ui-fabric-react/lib/Label';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize } from 'office-ui-fabric-react/lib/Pivot';
-import InstagramEmbed from 'react-instagram-embed';
 import { InstaPosts } from './IZNetInstagram';
 
+// import {*} from InstaembedJs 
 
 
 registerIcons({
