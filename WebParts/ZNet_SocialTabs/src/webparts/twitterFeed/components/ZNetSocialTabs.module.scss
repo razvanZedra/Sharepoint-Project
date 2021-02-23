@@ -9,6 +9,8 @@
   //   // -webkit-background-clip: text;
   //   // -webkit-text-fill-color: transparent;
   // }
+
+
   .container {
     max-width: 700px;
     margin: 0px auto;
@@ -44,49 +46,125 @@
     @include ms-font-l;
     @include ms-fontColor-white;
   }
-  .zNetWpTitle span{
+
+  .zNetWpTitle span {
     font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 600;
   }
-  .twitterIcon{
-    font-size: large;
+
+  .twitterIcon {
+    color: white;
+
 
   }
+
+  // .twitterIcon:hover, .twitterIcon:active{
+  //   color: #095f93;
+
+  // }
+  .instaIcon {
+    color: white;
+  }
+
+  // .instaIcon:hover, .instaIcon:active{
+  //   color: #a70536;
+  // }
+  .linkedInICon {
+    color: white;
+
+  }
+
+  // .linkedInICon:hover, .linkedInICon:active{
+
+  //   color: #094b6c;
+  // }
+  .instaIframe iframe {
+    margin: 0 auto !important;
+
+  }
+
   .pivotControl {
+    text-align: center;
     margin-top: -4px;
+
     ul[role="tablist"] span {
       // border: 1px solid #7f7f7f;
       // border-radius: 12px;
       font-size: 20px;
       font-weight: 600;
-  }
+    }
+
     button {
-      padding-top: 10px!important;
-      height: 60px!important;
+      padding-top: 4px !important;
+      height: 90px !important;
+      width: 90px;
       cursor: pointer;
       text-align: center;
-      // border-radius: 10px;
       background-clip: padding-box;
+      // background-color: rgb(105, 105, 105);
+      border-radius: 49%;
       overflow: hidden;
       text-overflow: ellipsis;
-      border: 1px solid transparent!important;
+      // border: 1px solid transparent!important;
       font-size: 13px;
-      margin-right: 0px;
+      padding-left: 18px !important;
+      padding-right: 10px !important;
+      margin-bottom: 20px !important;
+      margin-left: 30px !important;
+      margin-right: 30px !important;
+
       &:hover {
-          background-color: lightgrey;
-          border-color: lightgrey;
+        // background-color: transparent;
+        border-color: transparent;
       }
+
       &[aria-selected="true"] {
-        background-color: #ff0061!important;
-        border-color: #ff0061;
-        color: #fff;
-        fill: #fff;
-      }&[aria-selected="true"]::before {
-        border: none!important;
+        // background-color: transparent!important;
+        // border-color: transparent;
+        // color: white;
+        fill: transparent;
+      }
+
+      &[aria-selected="true"]::before {
+        border: none !important;
       }
     }
   }
+
+  [data-id="LinkedinTabHeader"] {
+    background-color: #2867B2 !important;
+    opacity: 0.75;
+  }
+
+  [data-id="TwitterTabHeader"] {
+    background-color: #1DA1F2 !important;
+    opacity: 0.75;
+  }
+  [data-id="InstagramTabHeader"] {
+    opacity: 0.75;
+    background: #d6249f !important;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  }
+
+
+
+  [data-id="InstagramTabHeader"]:active,
+  [data-id="InstagramTabHeader"]:focus,
+  [data-id="TwitterTabHeader"]:active,
+  [data-id="TwitterTabHeader"]:focus, 
+  [data-id="LinkedinTabHeader"]:active,
+  [data-id="LinkedinTabHeader"]:focus
+  {
+    text-shadow: 0 5px 10px -2px rgba(0,0,0,.57);
+    -webkit-box-shadow: 0 5px 10px -2px rgba(0,0,0,.57);
+    -moz-box-shadow: 0 5px 10px -2px rgba(0,0,0,.57);
+    box-shadow: 0 5px 10px -2px rgba(0,0,0,.57);
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+
+  }
+
   .button {
     // Our button
     text-decoration: none;
@@ -94,14 +172,14 @@
 
     // Primary Button
     min-width: 80px;
-    background-color: $ms-color-themePrimary;
+    // background-color: $ms-color-themePrimary;
     border-color: $ms-color-themePrimary;
-    color: $ms-color-white;
+    // color: $ms-color-white;
 
     // Basic Button
     outline: transparent;
     position: relative;
-    font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: $ms-font-size-m;
     font-weight: $ms-font-weight-regular;

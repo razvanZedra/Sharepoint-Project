@@ -4,23 +4,28 @@ import { IZNetSocialTabsProps } from './IZNetSocialTabsProps';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { WebPartTitle } from "@pnp/spfx-controls-react/lib/WebPartTitle";
 import { registerIcons } from '@uifabric/styling';
-import { Label } from 'office-ui-fabric-react/lib/Label';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Pivot, PivotItem, PivotLinkFormat, PivotLinkSize } from 'office-ui-fabric-react/lib/Pivot';
+import { InstaPosts } from './IZNetInstagram';
 
+// import {*} from InstaembedJs 
 
 
 registerIcons({
   icons: {
-    'TwitterIcon': <FontAwesomeIcon size="2x" icon={faTwitter}  />,
-    'InstagramIcon': <FontAwesomeIcon size="2x"  icon={faInstagram} />,
-    'LinkedinIcon': <FontAwesomeIcon  size="2x" icon={faLinkedin}  />
+    'TwitterIcon': <FontAwesomeIcon size="3x" icon={faTwitter} className={styles.twitterIcon} />,
+    'InstagramIcon': <FontAwesomeIcon size="3x" icon={faInstagram} className={styles.instaIcon} />,
+    'LinkedinIcon': <FontAwesomeIcon size="3x" icon={faLinkedin} className={styles.linkedInICon} />
   }
 });
 export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {}> {
+
+
+
+
   public render(): React.ReactElement<IZNetSocialTabsProps> {
     const {
       sourceType,
@@ -38,12 +43,25 @@ export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {
         <WebPartTitle displayMode={displayMode}
           title={title} className={styles.zNetWpTitle}
           updateProperty={updateProperty} />
-        <Pivot className={styles.pivotControl} aria-label="ZNet Social Tabs" linkFormat={PivotLinkFormat.tabs}  linkSize={PivotLinkSize.large} >
+        <Pivot className={styles.pivotControl} aria-label="ZNet Social Tabs" linkFormat={PivotLinkFormat.tabs} linkSize={PivotLinkSize.large} >
 
-          <PivotItem itemIcon="LinkedinIcon" headerText="LinkedIn">
-            <Label>Please provide API Access Token!!!</Label>
+          <PivotItem  headerButtonProps={{
+              'data-id': 'LinkedinTabHeader'
+            }} 
+            itemIcon="LinkedinIcon" >
+            <div><p>
+
+              "serviceErrorCode": 500: Server Error. Api Node Throttled <br></br>yh
+              "message": "Error Retrieving Posts: GET-companiesV2 /UGC/Posts/" <br></br>
+              "status": 500 <br></br>
+
+            </p></div>
           </PivotItem>
-          <PivotItem itemIcon="TwitterIcon" headerText="Twitter">
+          <PivotItem 
+          headerButtonProps={{
+            'data-id': 'TwitterTabHeader'
+          }} 
+          itemIcon="TwitterIcon" >
             <TwitterTimelineEmbed
               sourceType={sourceType}
               screenName={screenName}
@@ -58,8 +76,12 @@ export default class TwitterFeed extends React.Component<IZNetSocialTabsProps, {
                 tweetLimit: tweetLimit
               }} />
           </PivotItem>
-          <PivotItem  itemIcon="InstagramIcon" headerText="Instagram">
-            <Label>!~Please provide API Access Code and Secret~!</Label>
+          <PivotItem 
+          headerButtonProps={{
+            'data-id' : 'InstagramTabHeader'
+          }}
+          itemIcon="InstagramIcon" >
+            <InstaPosts></InstaPosts>
           </PivotItem>
         </Pivot>
 
